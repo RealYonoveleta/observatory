@@ -29,6 +29,7 @@ Build the foundation of a quantitative research institute: a place where ideas a
 - `meeting-notes/` — repeatable templates for research collaboration
 - `ideas/` — structured templates for new proposals and hypotheses
 - `roadmap/` — learning, research, and project progression plans
+- `platform/` — application code workspace for ingestion, analytics, simulation, models, and tools
 
 ## Learning Approach
 1. Follow staged domain progression in `roadmap/learning-roadmap.md`.
