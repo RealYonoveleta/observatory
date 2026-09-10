@@ -1,3 +1,28 @@
 # Glossary
 
-Key terms and concise definitions for this domain.
+- **Event**: A future real-world occurrence the market is forecasting.
+- **Market**: A trading venue for contracts tied to one event question.
+- **Contract**: A tradable claim that pays based on an outcome.
+- **Outcome**: One possible result of an event (for example, YES or NO).
+- **Resolution**: The process of deciding which outcome occurred.
+- **Resolution Criteria**: The specific rules and data sources used to resolve a market.
+- **Settlement**: Final payout of contracts after resolution.
+- **Probability**: The chance that an outcome happens, on a 0% to 100% scale.
+- **Implied Probability**: Probability inferred from market price.
+- **Price**: Current trading value of a contract.
+- **Bid**: Highest price a buyer is willing to pay.
+- **Ask**: Lowest price a seller is willing to accept.
+- **Spread**: Difference between best ask and best bid.
+- **Liquidity**: How easily you can trade without moving price much.
+- **Volume**: Amount traded over a period of time.
+- **Open Interest**: Number/value of contracts still open and not yet settled.
+- **Order Book**: Live list of outstanding buy and sell orders by price level.
+- **Market Maker**: Participant posting bids and asks to provide continuous liquidity.
+- **Arbitrage**: Low-risk trade exploiting pricing inconsistencies across related markets.
+- **Expected Value**: Average outcome of a trade if repeated many times.
+- **Calibration**: How well forecasted probabilities match actual frequencies.
+- **Forecast**: A probabilistic estimate of a future outcome.
+- **Information Aggregation**: Combining distributed information from many traders into one market price.
+- **Trader**: Anyone buying or selling contracts in the market.
+- **Speculator**: Trader seeking profit from price changes and forecasting skill.
+- **Hedger**: Trader reducing risk exposure by taking an offsetting position.
