@@ -15,6 +15,10 @@ Build the foundation of a quantitative research institute: a place where ideas a
 - Prefer reproducible workflows and clear provenance.
 - Separate learning artifacts from conclusions.
 
+## License and Authors
+- See `LICENSE` for ownership and usage terms.
+- See `AUTHORS.md` for the list of repository owners and authors.
+
 ## Repository Structure
 - `docs/` — project-level documentation
 - `knowledge/` — domain knowledge base and learning materials
