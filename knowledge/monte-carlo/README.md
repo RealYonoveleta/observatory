@@ -1,3 +1,3 @@
 # Monte Carlo
 
-Scope and study notes for monte carlo.
+Scope and study notes for Monte Carlo.
