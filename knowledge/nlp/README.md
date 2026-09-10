@@ -1,3 +1,3 @@
-# Nlp
+# NLP
 
-Scope and study notes for nlp.
+Scope and study notes for NLP.
