@@ -1,5 +1,5 @@
-"""Polymarket ingestion adapter."""
+from . import polymarket_ingestor
 
-from .adapter import PolymarketIngestor
-
-__all__ = ["PolymarketIngestor"]
+__all__ = [
+    "polymarket_ingestor"
+]
