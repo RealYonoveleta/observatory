@@ -1,34 +1,43 @@
 import asyncio
+import aiofiles
 from polymarket import AsyncPublicClient
+from datetime import datetime
 
 import os
 from pathlib import Path
 from dotenv import load_dotenv
-import json
 
 load_dotenv()
 
 DATASETS_DIR = Path(os.getenv("DATASETS_DIR"))
 
-async def main() -> list:
-    markets_list = []
+async def ingest_from_polymarket(target, output_path=None) -> None:
+    timestamp = datetime.now().strftime("%Y-%m-%d_%H-%M")
+
+    output_path = (
+        DATASETS_DIR / "raw" / "polymarket" / f"{target}_snapshot_{timestamp}.jsonl"
+        if output_path is None else output_path
+    )
+
+    output_path.parent.mkdir(parents=True, exist_ok=True)
+
+    method_name = f"list_{target}"
 
     async with AsyncPublicClient() as client:
+        try:
+            method = getattr(client, method_name)
 
-        pages = client.list_markets(closed=False)
-        
+        except AttributeError:
+            print(f"Error: Polymarket client doesn't contain method {method_name}")
+
+        pages = method(closed=False)
+
         async for page in pages:
-            for market in page.items:
-                markets_list.append(market.model_dump())
-        
-    return markets_list 
+            for element in page.items:
+                element_dict = element.model_dump_json()
 
-       
-markets = asyncio.run(main())
-
-output_path = DATASETS_DIR / "raw" / "polymarket" / "markets.json"
-
-output_path.parent.mkdir(parents=True, exist_ok=True)
-
-with open(output_path, "w", encoding="utf-8") as f:
-    json.dump(markets, f, indent=4, default=str)
+                async with aiofiles.open(output_path, mode="a", encoding="utf-8") as f:
+                    await f.write(element_dict + '\n')
+               
+    
+markets = asyncio.run(ingest_from_polymarket("markets"))
